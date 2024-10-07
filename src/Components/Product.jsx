@@ -43,9 +43,11 @@ export default function Product({ img, name, quantity, priceOptions }) {
           </select>
         }
       </p>
-      <p>
-        Total Price:{" "}
-        {(quantityCount.priceOptions * quantityCount.quantity).toFixed(2)}
+      <p style={{ color: "green" }}>
+        <b>
+          Total Price:{" "}
+          {(quantityCount.priceOptions * quantityCount.quantity).toFixed(2)}
+        </b>
       </p>
       <button
         onClick={() =>
