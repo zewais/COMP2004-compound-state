@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.products-container {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.product {
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em #ccc;
+  transition: transform 300ms;
+  width: 10em;
+}
