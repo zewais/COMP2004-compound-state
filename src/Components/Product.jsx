@@ -8,7 +8,7 @@
 
 import { useState } from "react";
 
-export default function Product({ img, name, quantity, priceOptions }) {
+export default function Product({ img, product, quantity, priceOptions }) {
   //quantityCount is an object with two properties: quantity and priceOptions.
   //quantityCount is initialized with the quantity and the first price option.
   //quantityCount is a state variable that is updated using the setQuantityCount function.
@@ -18,10 +18,14 @@ export default function Product({ img, name, quantity, priceOptions }) {
   });
   return (
     <div className="product">
+      {/* image */}
       <img src={img} alt={name} height="100px" />
-      <h3>{name}</h3>
+      {/* product name */}
+      <h3>{product}</h3>
+      {/* Quantity state */}
       <p>Quantity: {quantityCount.quantity}</p>
       <p>
+        {/* Dropdown menu for prices */}
         Price:{" "}
         {
           <select
@@ -49,6 +53,7 @@ export default function Product({ img, name, quantity, priceOptions }) {
           {(quantityCount.priceOptions * quantityCount.quantity).toFixed(2)}
         </b>
       </p>
+      {/* Add button with state update functionality */}
       <button
         onClick={() =>
           setQuantityCount((prevCount) => {
@@ -58,6 +63,8 @@ export default function Product({ img, name, quantity, priceOptions }) {
       >
         Add
       </button>
+
+      {/* Remove button. If the quantity is zero, it will no go in negative */}
       <button
         onClick={() =>
           setQuantityCount((prevCount) => {
